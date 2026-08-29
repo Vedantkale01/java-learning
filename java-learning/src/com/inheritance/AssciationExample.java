@@ -1,5 +1,4 @@
 package com.inheritance;
-
 public class AssciationExample {
 	  public static void main(String[] args) {
 		Pen pen=new Pen("Reynold", "Black", "Gel", 10);
@@ -26,8 +25,7 @@ class Student{
 		pen.displayDetails();
 	}
 }
-class Pen{
-	
+class Pen{	
 	String brand;
 	String color;
 	String type;
@@ -43,7 +41,5 @@ class Pen{
 		System.out.println("Color : "+color);
 		System.out.println("Type : "+type);
 		System.out.println("Prce : "+price);
-	}
-	
-	
+	}	
 }
