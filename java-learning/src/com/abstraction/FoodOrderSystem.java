@@ -15,9 +15,7 @@ public class FoodOrderSystem {
 		DeliveryPartner partner=DeliveryFactory.getDeliveryPartner(choice);
 		OrderService obj=new OrderService();
 		obj.placeOrder(partner, item);
-
 	}
-
 }
 class OrderService{
 	public void placeOrder(DeliveryPartner partner, String item) {
@@ -32,20 +30,20 @@ class OrderService{
 class DeliveryFactory{
 	public static DeliveryPartner getDeliveryPartner(int choice) {
 		switch(choice) {
-		case 1 -> {
-			return new SwiggyDelivery();
-		}
-		case 2 -> {
-			return new ZomatoDelivery();
-		}
-		case 3 -> {
-			return new DunzoDelivery();
-		}
-		default -> {
-			return null ;
-		}
-	}
-}
+			case 1 -> {
+				return new SwiggyDelivery();
+			}
+			case 2 -> {
+				return new ZomatoDelivery();
+			}
+			case 3 -> {
+				return new DunzoDelivery();
+			}
+			default -> {
+				return null ;
+			}
+	    }
+    }
 }	
 interface DeliveryPartner{
 	boolean  deliverOrder(String item) ;
