@@ -2,7 +2,7 @@ package com.arrays;
 
 import java.util.Scanner;
 
-public class ArrayDemo {
+public class NthLargestEl {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
@@ -13,14 +13,17 @@ public class ArrayDemo {
 		for(int i=0; i<size;i++) {
 			arr[i]=sc.nextInt();
 		}
-		int count_even=0;
-		int count_odd=0;
-		for(int el : arr) {
-				if(el%2==0) count_even++;
-				else count_odd ++;
+		System.out.println("Enter n value to print nth largest");
+		int n=sc.nextInt();
+		for(int el : arr ) {
+			int count=0;
+			for(int j :arr) {
+				if(j>el) count++;
+			}
+			if(count== (n-1)) {
+				System.out.println(n+" largest element is "+el);
+			}
 		}
-		System.out.println("count of even number "+count_even);
-		System.out.println("count of odd number "+count_odd);
 	}
 
 }
