@@ -1,5 +1,6 @@
 package com.arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayDemo {
@@ -13,14 +14,19 @@ public class ArrayDemo {
 		for(int i=0; i<size;i++) {
 			arr[i]=sc.nextInt();
 		}
-		int count_even=0;
-		int count_odd=0;
-		for(int el : arr) {
-				if(el%2==0) count_even++;
-				else count_odd ++;
+		int firstmax=arr[0];
+		int secondmax=arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]>firstmax) {
+				secondmax=firstmax;
+				firstmax=arr[i];
+			}else if(arr[i]>secondmax && arr[i]!=firstmax) {
+				secondmax=arr[i];
+			}
+			
 		}
-		System.out.println("count of even number "+count_even);
-		System.out.println("count of odd number "+count_odd);
+		System.out.println(secondmax);
 	}
 
 }
