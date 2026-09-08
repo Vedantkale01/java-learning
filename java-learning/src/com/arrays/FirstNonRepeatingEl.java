@@ -2,7 +2,7 @@ package com.arrays;
 
 import java.util.Scanner;
 
-public class FirstRepeatingElement {
+public class FirstNonRepeatingEl {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
@@ -13,30 +13,25 @@ public class FirstRepeatingElement {
 		for(int i=0; i<size;i++) {
 			arr[i]=sc.nextInt();
 		}
-//		outer :
-//		for(int i=0;i<arr.length;i++) {
-//			for(int j=i+1;j<arr.length;j++) {
-//				if(arr[i]==arr[j]) {
-//					System.out.println(arr[i]);
-//					break outer;
-//				}
-//			}
-//		}
-		
 		int index=-1;
+		int count;
 		for(int i=0;i<size;i++) {
-			for(int j=0;j<i;j++) {
+			count=0;
+			for(int j=0;j<size;j++) {
 				if(arr[j]==arr[i]) {
-					index=i;
-					break;
+					count++;
 				}
 			}
-			if(index!=-1) break;
+			if(count==1) {
+				index=i;
+				break;
+			}
 		}
 		if(index==-1) {
-			System.out.println("No repeating element present");
-		}else System.out.println("First repeating element is "+arr[index]);
-		
+			System.out.println("No non repeating element in the array");
+		}else {
+			System.out.println("First non repeating element is : "+arr[index]);
+		}
 	}
 
 }
