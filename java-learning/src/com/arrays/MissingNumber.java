@@ -1,12 +1,10 @@
 package com.arrays;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class BubbleSort {
+public class MissingNumber {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
         System.out.println("Enter array size : ");
         int size = sc.nextInt();
 
@@ -18,16 +16,16 @@ public class BubbleSort {
         {
             arr[i] = sc.nextInt();
         }
-        
-        for(int i=0;i<size;i++) {
-        	for(int j =0; j<size-1-i;j++) {
-        		if(arr[j+1]<arr[j]) {
-        			int temp =arr[j];
-        			arr[j]=arr[j+1];
-        			arr[j+1]=temp;
-        		}
-        	}
+        int n=arr[size-1];
+        int sum= (n*(n+1))/2;
+        int sumArr=0;
+        for(int el : arr) {
+        	sumArr+=el;
         }
-        System.out.println(Arrays.toString(arr));
+        if(sum==sumArr ) 
+        	System.out.println("No missing element");
+        else 
+        System.out.println("Missing element:" +(sum-sumArr));
+       
 	}
 }

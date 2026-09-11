@@ -1,12 +1,11 @@
 package com.arrays;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class SelectionSort {
+public class MinPairDiff {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
         System.out.println("Enter array size : ");
         int size = sc.nextInt();
 
@@ -18,17 +17,18 @@ public class SelectionSort {
         {
             arr[i] = sc.nextInt();
         }
-        
+        int minDiff=Integer.MAX_VALUE;
         for(int i=0;i<size;i++) {
-        	int min=i;
+        	
         	for(int j=i+1;j<size;j++) {
-        		if(arr[j]<arr[min]) min=j;
+        		if(Math.abs(arr[i]-arr[j])<minDiff)
+        			minDiff=Math.abs(arr[i]-arr[j]);
+        		//if(arr[i]>arr[j] && arr[i]-arr[j]<minDiff) minDiff=arr[i]-arr[j];
+        	//	else if (arr[i]<arr[j] && arr[j]-arr[i]<minDiff) minDiff=arr[j]-arr[i];
         	}
-        	int temp=arr[min];
-        	arr[min]=arr[i];
-        	arr[i]=temp;
         	
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Minimum Difference is "+minDiff);
 	}
+
 }
